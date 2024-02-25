@@ -36,9 +36,7 @@ body{
     /* меню сайта  */
 .site-nav{
   display: flex;
-}
-.list .item:not(:last-child){
-  margin-right: 50px;
+  gap: 50px;
 }
 .site-nav .link{
   display: block;
@@ -48,23 +46,59 @@ body{
 .contacts-nav{
   display: flex;
   margin-left: auto;
+  gap: 50px;
 }
-.contacts-nav .item:not(:last-child){
-  margin-right: 50px;
-}
+
 
 
 /* ----------------------------main----------------------------------------------------------- */
 .main{
   background-color:#2F303A;
+  padding:200px 0px 210px 0px;
 }
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+    /* Заголовок */
+.main-title{
+  max-width: 696px;
+  text-transform: uppercase;
+  display:block;
+  text-align: center;
+  padding-bottom: 30px;
+}
+    /* Кнопка */
+.main-button {
+  display:block;
+  padding: 10px 32px;
+}
+
+/* ------------------------------------------------------ВАРИАНТ 1
+Заголовок 
+.main-title{  
+  display: block;
+  text-align: center;
+  padding-bottom: 30px;
+}
+  /*Кнопка 
+.main-button {
+  padding: 10px 32px;
+  margin: 0 auto;
+  display: block;
+}*/
+
+/* ------------------------------------------------------ИСХОДНЫЙ ВАРИАНТ
 .main-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-    /* Заголовок */
+    /*Заголовок 
 .main-box-title{
   display: flex;
   justify-content: center;
@@ -74,11 +108,10 @@ body{
   max-width: 696px;
   margin-top: 200px;
   text-align: center;
-  text-transform: uppercase;
-  
+  text-transform: uppercase; 
 }
 
-    /* Кнопка */
+    /*Кнопка 
 .main-box-button{
   display: flex;
   justify-content: center;
@@ -86,7 +119,7 @@ body{
 .main-button{
 padding: 10px 32px;
 margin: 30px 0px 210px 0px;
-}
+}*/
 
 
 /* --------------------------------Блок преимуществ--------------------------------------------- */
@@ -96,22 +129,16 @@ margin: 30px 0px 210px 0px;
 .edge-list{
   display: flex;
   align-items:flex-start;
+  gap:30px;
 }
 .edge-column{
   flex: 0 1 25%;
-  margin-right:30px;
 }
-/* Убираю, потому что в макете у всех есть
-.edge-column:not(:last-child){
-margin-right:30px;
-} */
-
     /* Заголовки */
 .column-title{
   display: block;
   text-transform: uppercase;
 }
-
     /* Текст */
 .edge-column .column-text{
   display: block;
@@ -155,13 +182,54 @@ margin-right:30px;
 }
 .team-list{
   display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+.team-column{
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 25%;
+
+  border-radius: 0px 0px 4px 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 1px  rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px  rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 1px 3px  rgba(0, 0, 0, 0.12);
+}
+.team-title{
+  display: block;
+  text-align: center;
+}
+.name{
+  display:block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.position{
+  display:block;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.team-image{
+  display:block;
+  margin-bottom: 30px;
+  object-fit: cover;
+}
+
+
+
+
+
+/*----------------------------------------------------------Исходный вариант
+.team-list{
+  display: flex;
   justify-content: space-between;
 }
 .team-column:not(:last-child){
   margin-right: 30px;
 }
 
-    /* Заголовок */
+    /* Заголовок 
 .team-title-box{
   display: flex;
   justify-content: center;
@@ -171,7 +239,7 @@ margin-right:30px;
   display: block;
 }
 
-    /* Подписи */
+    /* Подписи 
 .team-list .column-text{
   display: flex;
   flex-direction: column;
@@ -195,7 +263,7 @@ margin-top: 30px;
 }
 .position{
   display: block;
-}
+}*/
 
 
 /* -------------------------------------------------footer--------------------------------------------------- */
@@ -216,7 +284,7 @@ margin-top: 30px;
   display: flex;
   flex-direction: column;
 }
-.contacts-footer .item{
+.contacts-footer .item, .footer-box a{
   display: block;
   font-style: normal;
 }
@@ -232,35 +300,35 @@ margin-bottom: 9px;
 .filter-button-item{
   display: flex;
   justify-content: center;
+  gap: 8px;
 }
-.button-item:not(:last-child){
-margin-right: 8px;
-}
+
 .button-item button{
   display: block;
   padding: 6px 22px;
   border-radius: 4px;
 }
+.button-item:active{
+  background-color: var(--brand-color);
+  color:var(--main-title-color);
+}
     /* пункты порфолио */
 .categoty{
   display: flex;
-  justify-content: space-between;
+  
 }
 .category-list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 0px 15px;
+  gap: 30px;
 }
 .category-column{
   display: flex;
   flex-direction: column;
+  flex: 0 1 30%
 }
-.category-column:not(:nth-child(-n+3)){
-  margin-top: 30px;
-}
-.category-column:not(:nth-child(3n)){
-  margin-right: 30px;
-}
+
 .category-sign-text{
   display:flex;
   flex-direction: column;
@@ -270,12 +338,10 @@ margin-right: 8px;
   padding: 20px 24px;
 }
 .sign-title{
+  display: block;
   margin-bottom: 4px;
 }
-.sign-title h3{
-  display: block;
-}
-.sign-text p{
+.sign-text{
   display: block;
 }
 
@@ -337,7 +403,7 @@ section h2{
 }
 .list a{
   font-weight: 500;
-  line-height:1.17
+  line-height:1.17;
 }
 .contacts a{
   font-weight: 500;
@@ -361,7 +427,7 @@ section h2{
   font-weight: 500;
   line-height: 1.62;
 }
-.contacts a:hover, .contacts a:focus,.nav a:hover, .nav a:focus {
+.item a:hover, .item a:focus,.item a:hover, .item a:focus {
   color: var(--brand-color);
 }
 .filter-button button:hover, .filter-button button:focus, .main button{
@@ -370,7 +436,7 @@ section h2{
 }
 
 /* Цвет текста */
-.contacts a, section p, .name-category p, .sign-text p{
+.contacts a, section p, .name-category p, .sign-text{
   color:var(--text-color);
 }
 .contacts p, .main h1{ 
